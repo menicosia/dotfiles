@@ -31,6 +31,7 @@ alias sshmornay="gomornay -d cf-mysql ssh --gw-user vcap --gw-host=bosh.mornay.c
 alias srilogin='(cd $HOME/workspace/deployments-core-services/sriracha; git pull; bbl ssh-key > ~/.ssh/sriracha.id_rsa; chmod 600 ~/.ssh/sriracha.id_rsa; BOSH_CA_CERT=$(bbl director-ca-cert) bosh2 login --client=$(bbl director-username) --client-secret=$(bbl director-password) -e $(bbl director-address); BOSH_CA_CERT=$(bbl director-ca-cert) bosh2 -e $(bbl director-address) alias-env sriracha)'
 alias gosri="bosh2 -e sriracha"
 alias sshsri="gosri -d cf-mysql ssh --gw-user jumpbox --gw-host 35.193.197.242 --gw-private-key ~/.ssh/sriracha.id_rsa"
+alias targetsri='(CF_CONFIG=$(find $HOME/workspace/core-services-oss-env-resource-pool -name sriracha); cf api $(jq -r "\"api.\" + .domain" $CF_CONFIG) --skip-ssl-validation; cf login -u $(jq .client $CF_CONFIG) -p $(jq .client_secret $CF_CONFIG))'
 
 
 ## https://www.iterm2.com/documentation-badges.html
