@@ -9,11 +9,8 @@ alias 0='cat > /dev/null'
 alias cdc='clear ; cd'
 alias sp='unset PROMPT_COMMAND; PS1="\A \u \h \w\$ "'
 alias empty-tasks="curl -L http://192.168.11.11:4001/v2/keys/v1/task/?recursive=true -XDELETE"
-alias lattice-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/lattice,v0.3.0,v0.3.2,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
 alias mysql-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/cf-mysql-release,v34,master,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
-alias riakcs-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/cf-riak-cs-release,v10,v11,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
 alias p-mysql-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/p-mysql,v1.6.6,master,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
-alias p-riak-cs-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/p-riak-cs,v1.5.2.0,v1.5.3.0,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
 alias update-eagle-cert="scp ubuntu@pcf.eagle.wild.cf-app.com:/var/tempest/workspaces/default/root_ca_certificate ~/.ssh/eagle-root-ca.crt"
 alias target-eagle="bosh --ca-cert ~/.ssh/eagle-root-ca.crt target 10.85.21.91 ; bosh -n download manifest \$(bosh deployments 2>/dev/null | awk -F \| '\$2 ~ /p-mysql/ {print \$2}') /tmp/eagle-mysql.yml ; bosh deployment /tmp/eagle-mysql.yml"
 alias target-primo="bosh target bosh.primo.cf-app.com ; bosh -n download manifest cf-mysql /tmp/primo-mysql.yml ; bosh deployment /tmp/primo-mysql.yml"
