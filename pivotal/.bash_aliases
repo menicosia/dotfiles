@@ -6,6 +6,7 @@
 alias tf=~/bin/terraform/terraform
 alias ls='ls -FCAs'
 alias 0='cat > /dev/null'
+alias cdc='clear ; cd'
 alias sp='unset PROMPT_COMMAND; PS1="\A \u \h \w\$ "'
 alias empty-tasks="curl -L http://192.168.11.11:4001/v2/keys/v1/task/?recursive=true -XDELETE"
 alias lattice-relnotes="bundle exec rake changelog[/Users/pivotal/workspace/lattice,v0.3.0,v0.3.2,''] | sort -u | sed -E 's|(.*) \[details\].+/([[:digit:]]+).$|\1 \[[\#\2\]\(https://www.pivotaltracker.com/story/show/\2\)\]|'"
