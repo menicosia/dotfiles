@@ -11,3 +11,20 @@ alias targetsri='(CF_CONFIG=$(find $HOME/workspace/core-services-oss-env-resourc
 alias srilogin='(cd $HOME/workspace/deployments-core-services/sriracha; git pull; bbl4 ssh-key > ~/.ssh/sriracha.id_rsa; chmod 600 ~/.ssh/sriracha.id_rsa; BOSH_CA_CERT=$(bbl4 director-ca-cert) bosh2 login --client=$(bbl4 director-username) --client-secret=$(bbl4 director-password) -e $(bbl4 director-address); BOSH_CA_CERT=$(bbl4 director-ca-cert) bosh2 -e $(bbl4 director-address) alias-env sriracha)'
 alias dammit="bosh -n cleanup && bosh create release --force && bosh -n upload release"
 alias sridammit="gosri -n clean-up && gosri create-release --force && gosri -n upload-release"
+function cfadminc ()
+{
+    environment=${1-fiji};
+    source $HOME/workspace/dedicated-mysql-environments/scripts/bosh-env-vars ${environment};
+    cf_admin_key=$(credhub find --name-like 'cf\_admin\_password' -j | jq -r .credentials[0].name);
+    export CF_PASSWORD=$(credhub get -n "${cf_admin_key}" -j | jq -r .value);
+    unset https_proxy;
+    cf login -a api.${environment}.dedicated-mysql.cf-app.com --skip-ssl-validation -u admin -p ${CF_PASSWORD}
+}
+function funnelpw () {
+    cf service-key funnelDB marco-desktop | tail +2 | jq -r '.password' | pbcopy
+}
+function funneltunnel () {
+    pushd ${HOME}/workspace/funnel-api.node/
+    cf ssh -N -L 63306:q-n8s3y1.q-g190.bosh:3306 funnel-api &
+    popd
+}
