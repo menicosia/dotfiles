@@ -31,6 +31,7 @@ function funneltunnel () {
 }
 function pws-vpn () {
     echo 'Instructions at: https://github.com/pivotal-cloudops/cloudops-docs/blob/master/bosh-director-access-openvpn-ssoca.md'
+    ssoca -e pws-prod openvpn exec --sudo &
     lpass show --clip --password 'Shared-PWS-mnicosia-Dropbox/PWS BOSH mnicosia'
     bosh -e prod login
 }
