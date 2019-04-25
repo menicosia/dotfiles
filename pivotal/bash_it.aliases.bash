@@ -32,9 +32,9 @@ function funnelpw () {
     cf service-key funnelDB marco-desktop | tail +2 | jq -r '.password' | pbcopy
 }
 function funneltunnel () {
-    pushd ${HOME}/workspace/funnel-api.node/
+    cf api api.run.pivotal.io
+    cf target -o pcf-mysql-product -s PM
     cf ssh -N -L 63306:q-n8s3y1.q-g190.bosh:3306 funnel-api &
-    popd
     cf service-key funnelDB marco-desktop | tail +2 | jq -r .password | pbcopy
 }
 function pws-vpn () {
