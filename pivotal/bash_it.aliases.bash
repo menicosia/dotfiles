@@ -38,8 +38,10 @@ function funneltunnel () {
     cf service-key funnelDB marco-desktop | tail +2 | jq -r .password | pbcopy
 }
 function pws-vpn () {
-    echo 'Instructions at: https://github.com/pivotal-cloudops/cloudops-docs/blob/master/bosh-director-access-openvpn-ssoca.md'
-    ssoca -e pws-prod openvpn exec --sudo &
+    echo 'Instructions at: https://github.com/pivotal/pws-docs/blob/master/bosh-director-access-openvpn-ssoca.md'
+    ssoca -e pws-prod auth login
+    ssoca -e pws-prod openvpn exec --sudo > /dev/null &
     lpass show --clip --password 'Shared-PWS-mnicosia-Dropbox/PWS BOSH mnicosia'
+    export BOSH_ENVIRONMENT=prod
     bosh -e prod login
 }
