@@ -5,6 +5,8 @@ alias pxc="cd ~/workspace/pxc-release"
 
 alias gpc="git pair-commit"
 
+alias rehash="hash -r"
+
 alias dammit="bosh -n cleanup && bosh create release --force && bosh -n upload release"
 function cfadminc ()
 {
