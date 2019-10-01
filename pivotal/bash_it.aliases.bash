@@ -22,14 +22,14 @@ function funnelpw () {
 }
 function funneltunnel () {
     cf api api.run.pivotal.io
-    cf target -o pcf-mysql-product -s PM
-    cf ssh -N -L 63306:q-n8s3y1.q-g190.bosh:3306 funnel-api &
+    cf target -o dedicated-mysql-dev -s PM
+    cf v3-ssh -N -L 63306:q-n8s3y1.q-g190.bosh:3306 funnel-api &
     cf service-key funnelDB marco-desktop | tail +2 | jq -r .password | pbcopy
 }
 function pws-vpn () {
     echo 'Instructions at: https://github.com/pivotal/pws-docs/blob/master/bosh-director-access-openvpn-ssoca.md'
     ssoca -e pws-prod auth login
-    ssoca -e pws-prod openvpn exec --sudo > /dev/null &
+    ssoca -e pws-prod openvpn exec --sudo &
     lpass show --clip --password 'Shared-PWS-mnicosia-Dropbox/PWS BOSH mnicosia'
     export BOSH_ENVIRONMENT=prod
     bosh -e prod login
