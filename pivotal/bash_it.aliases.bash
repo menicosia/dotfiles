@@ -26,6 +26,12 @@ function funneltunnel () {
     cf v3-ssh -N -L 63306:q-n8s3y1.q-g190.bosh:3306 funnel-api &
     cf service-key funnelDB marco-desktop | tail +2 | jq -r .password | pbcopy
 }
+function clickpointtunnel () {
+    cf api api.run.pivotal.io
+    cf target -o moragasystems -s prod
+    cf v3-ssh -N -L 63306:q-n8s3y1.q-g173112.bosh:3306 clickpoint &
+    cf service-key moragasysDB marco-cli | tail +2 | jq -r .password | pbcopy
+}
 function pws-vpn () {
     echo 'Instructions at: https://github.com/pivotal/pws-docs/blob/master/bosh-director-access-openvpn-ssoca.md'
     ssoca -e pws-prod auth login
