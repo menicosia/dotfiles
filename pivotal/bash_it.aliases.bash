@@ -2,6 +2,7 @@
 alias mr="cd ~/workspace/cf-mysql-release"
 alias md="cd ~/workspace/cf-mysql-deployment"
 alias pxc="cd ~/workspace/pxc-release"
+alias k="kubectl"
 
 alias gpc="git pair-commit"
 

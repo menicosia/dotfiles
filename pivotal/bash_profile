@@ -12,6 +12,7 @@ source $BASH_IT/bash_it.sh
 
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 [ -d /usr/local/sbin ] && export PATH=$PATH:/usr/local/sbin
+[ -d /usr/local/opt/python/libexec/bin ] && export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 which -s direnv
 if [ 0 -eq $? ]; then eval "$(direnv hook bash)"; fi
