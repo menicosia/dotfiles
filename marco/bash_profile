@@ -80,25 +80,25 @@ export SCM_CHECK=true
 source "$BASH_IT"/bash_it.sh
 
 export PATH="$HOME/bin:$PATH"
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/marco/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"; export PATH;
+
 [ -d /usr/local/sbin ] && export PATH=$PATH:/usr/local/sbin
 [ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
+[ -d /opt/homebrew/opt/python/libexec/bin ] && PATH=${PATH}:/opt/homebrew/opt/python/libexec/bin ; export PATH ;
 
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 [ -d /usr/local/opt/chruby ] && source /usr/local/opt/chruby/share/chruby/chruby.sh
 
-
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.bash.inc' ]; then source '/Users/pivotal/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.bash.inc' ]; then source '$HOME/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-# if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/pivotal/google-cloud-sdk/completion.bash.inc'; fi
+# if [ -f '$HOME/google-cloud-sdk/completion.bash.inc' ]; then source '$HOME/google-cloud-sdk/completion.bash.inc'; fi
 
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
-PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/pivotal/google-cloud-sdk/bin:/Users/marco/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"; export PATH;
-[ -d /opt/homebrew/opt/python/libexec/bin ] && PATH=${PATH}:/opt/homebrew/opt/python/libexec/bin ; export PATH ;
 [ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
