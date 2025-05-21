@@ -79,14 +79,14 @@ export SCM_CHECK=true
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
+# [ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
 export PATH="$HOME/bin:$PATH"
 PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/marco/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"; export PATH;
 
 [ -d /usr/local/sbin ] && export PATH=$PATH:/usr/local/sbin
 [ -d /opt/homebrew/bin ] && export PATH=$PATH:/opt/homebrew/bin
 [ -d /opt/homebrew/opt/python/libexec/bin ] && PATH=${PATH}:/opt/homebrew/opt/python/libexec/bin ; export PATH ;
-
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 [ -d /usr/local/opt/chruby ] && source /usr/local/opt/chruby/share/chruby/chruby.sh
 
