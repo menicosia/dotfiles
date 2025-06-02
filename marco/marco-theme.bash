@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#
+# I am pretty sure this is never being called when theme is set to bobby in bash_profile
+
+echo "sourcing marco-theme..."
 
 SCM_THEME_PROMPT_DIRTY=" ${red}✗"
 SCM_THEME_PROMPT_CLEAN=" ${bold_green}✓"
