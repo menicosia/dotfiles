@@ -19,8 +19,6 @@ export BASH_IT_THEME='custom-bobby-py'
 # Set `$THEME_CHECK_SUDO` to `true` to check every prompt:
 #THEME_CHECK_SUDO='true'
 
-THEME_SHOW_CLOCK_CHAR=false
-
 # (Advanced): Change this to the name of your remote repo if you
 # cloned bash-it with a remote other than origin such as `bash-it`.
 # export BASH_IT_REMOTE='bash-it'
