@@ -1,0 +1,12 @@
+Match host server.escape.org Exec "nc -z proxy-dmz.intel.com 1080"
+    ProxyCommand nc -X 5 -x proxy-dmz.intel.com:1080 %h %p
+
+# Send GitHub traffic through proxy-dmz if proxy-dmz is reachable
+Match host github.com Exec "nc -z proxy-dmz.intel.com 1080"
+    ProxyCommand nc -X 5 -x proxy-dmz.intel.com:1080 %h %p
+
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain no
+  IdentityFile ~/.ssh/marco-github
+
