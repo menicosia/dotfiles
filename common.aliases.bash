@@ -5,6 +5,8 @@ alias dc='cd'
 alias cdc='cd ; clear'
 # alias chtitle='echo -n "]0;\!:2-$" >> \!:1'
 alias ls='ls -FCAs --color=never'
+# venv doesn't install a link to a pydoc binary
+alias pydoc="python -m pydoc"
 
 add() {
   perl -ne 'BEGIN {$f=0}; END {print "$f\n"} if (/^$/) {exit 0} $f += $_'
