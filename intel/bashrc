@@ -23,13 +23,17 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 #   export NO_PROXY=intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,.local,127.0.0.0/8,172.16.0.0/12,134.134.0.0/16
 # fi
 
-# Proxy configuration according to https://github.com/intel-innersource/applications.infrastructure.caas.caas-demo
-export http_proxy=http://proxy-dmz.intel.com:912; export https_proxy=http://proxy-dmz.intel.com:912; export no_proxy=localhost,127.0.0.0/8,10.0.0.0/8,.intel.com,localhost,127.0.0.1
+# Proxy configuration according to: https://intelpedia.intel.com/Proxy_at_Intel
+# also as described at: https://github.com/intel-innersource/applications.infrastructure.caas.caas-demo
+export http_proxy=http://proxy-dmz.intel.com:912;
+export https_proxy=http://proxy-dmz.intel.com:912;
+export no_proxy=localhost,127.0.0.0/8,10.0.0.0/8,.intel.com,localhost,127.0.0.1
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 PATH+=":$HOME/bin"
 PATH+=":/opt/homebrew/opt/mysql-client/bin"
+PATH+=":/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
