@@ -1,3 +1,6 @@
+##
+# symlink this to ~/.config/git/config
+
 [user]
 	name = Marco Nicosia
 	email = marco-github@escape.org

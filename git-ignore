@@ -1,3 +1,6 @@
+##
+# symlink this to ~/.config/git/ignore
+
 *~
 #*#
 *.log
