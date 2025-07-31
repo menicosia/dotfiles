@@ -1,0 +1,45 @@
+*~
+#*#
+*.log
+*.[oa]
+*.pyc
+*.tgz
+*.tar.gz
+*.tmp
+tmp/
+
+### MacOS specific
+hammerspoon/
+.Ulysses*
+
+### VS Code files for those working on multiple tools
+# From https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+### Python ###
+# Excerpts of https://www.toptal.com/developers/gitignore/api/python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+MANIFEST
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
