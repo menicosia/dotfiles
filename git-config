@@ -1,0 +1,12 @@
+[user]
+	name = Marco Nicosia
+	email = marco-github@escape.org
+[core]
+	editor = emacs
+	ignorecase = true
+[credential "https://github.com/menicosia"]
+	username = menicosia
+[credential]
+	helper = cache --timeout=86400
+[push]
+	default = simple
