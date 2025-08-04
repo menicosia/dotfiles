@@ -14,6 +14,7 @@ tmp/
 ### MacOS specific
 hammerspoon/
 .Ulysses*
+.DS_Store
 
 ### VS Code files for those working on multiple tools
 # From https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
