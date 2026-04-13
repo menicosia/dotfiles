@@ -13,3 +13,5 @@
 	helper = cache --timeout=86400
 [push]
 	default = simple
+[pull]
+	rebase = true
