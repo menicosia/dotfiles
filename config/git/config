@@ -9,6 +9,8 @@
 	ignorecase = true
 [credential "https://github.com/menicosia"]
 	username = menicosia
+[credential "https://github.com/pm-practices/pm-blog"]
+	username = menicosia
 [credential]
 	helper = cache --timeout=86400
 [push]
