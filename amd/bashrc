@@ -1,20 +1,18 @@
 # shellcheck shell=bash
 # shellcheck disable=SC2034
-#
-# This file should remain as close to the generated bashrc created by `bash_it` as possible.
-# The template may update occasionally, track it at `~/.bash_it/template/bashrc.template.bash`
-# The ubuntu default .bashrc is located at /etc/skel/.bashrc
-#
+
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
 	*) return ;;
 esac
+
 echo "sourcing .bashrc"
-#
 
 # Path to the bash it configuration
 BASH_IT="$HOME/.bash_it"
+# Place any environment-specific .bash files in this directory
+BASH_IT_CUSTOM="$HOME/dotfiles/amd"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -78,18 +76,6 @@ export SCM_GIT_SHOW_MINIMAL_INFO=true
 
 # Uncomment this to make Bash-it create alias reload.
 # BASH_IT_RELOAD_LEGACY=1
-
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-PATH+=":$HOME/bin"
-PATH+=":$HOME/.local/bin"
-PATH+=":/opt/homebrew/opt/mysql-client/bin"
-export PATH
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load Bash It
 source "${BASH_IT?}/bash_it.sh"
