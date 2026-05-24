@@ -2,6 +2,7 @@
 echo "sourcing local settings..."
 
 PATH+=":$HOME/bin"
+# Claude CLI installs in .local/bin
 PATH+=":$HOME/.local/bin"
 export PATH
 
