@@ -21,4 +21,4 @@ Host github.com
 Host github-amdeng
   HostName github.com
   AddKeysToAgent yes
-  IdentityFile /home/mnicosia/.ssh/mn_amdeng
+  IdentityFile /home/mnicosia/.ssh/mn-amdeng
