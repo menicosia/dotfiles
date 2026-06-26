@@ -18,3 +18,7 @@ Host github.com
 #  UseKeychain no
   IdentityFile /home/mnicosia/.ssh/marco-github
 
+Host github-amdeng
+  HostName github.com
+  AddKeysToAgent yes
+  IdentityFile /home/mnicosia/.ssh/mn_amdeng
