@@ -7,10 +7,16 @@ Please don't commit any secrets to my dotfiles.
 ## Where to install dotfiles
 ```sh
    ln -s emacs ~/.emacs
-   ln -s <env>/ssh-config ~/.ssh/config
    mkdir -p ~/.config/git
    ln -s git-config ~/.config/git/config
    ln -s git-ignore ~/.config/git/ignore
+```
+
+**SSH config files**
+Because each computer should have its own set of ssh keys for github, it's best to have multiple ssh configs that specify the correct IdentityFile. Link to the correct config file for your host.
+
+```sh
+   ln -s ~/dotfiles/amd/ssh-config-mn-halo ~/.ssh/config
 ```
 
 ### Setting up a fresh computer
