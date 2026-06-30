@@ -1,9 +1,9 @@
 #
 echo "sourcing local settings..."
 
-PATH+=":$HOME/bin"
+[[ ":$PATH:" != *":$HOME/bin:"* ]] && PATH+=":$HOME/bin"
 # Claude CLI installs in .local/bin
-PATH+=":$HOME/.local/bin"
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && PATH+=":$HOME/.local/bin"
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
