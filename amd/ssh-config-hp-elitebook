@@ -10,8 +10,8 @@ Match host ssh.ocf.berkeley.edu Exec "nc -z atlvpradjmpp01.amd.com 1080"
     ProxyCommand nc -X 5 -x atlvpradjmpp01.amd.com:1080 %h %p
 
 # Send GitHub traffic through ssh jump-box if it is reachable
-Match host github.com Exec "nc -z atlvpradjmpp01.amd.com 1080"
-    ProxyCommand nc -X 5 -x atlvpradjmpp01.amd.com:1080 %h %p
+# Match host github.com Exec "nc -z atlvpradjmpp01.amd.com 1080"
+#    ProxyCommand nc -X 5 -x atlvpradjmpp01.amd.com:1080 %h %p
 
 Host github.com
   AddKeysToAgent yes
