@@ -16,3 +16,9 @@ add() {
 itermbadge() {
   printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "$1" | base64)
 }
+
+# Usage: resize_term <lines> <columns>
+# Example: resize_term 30 100
+resize_term() {
+    printf "\033[8;${1};${2}t"
+}
