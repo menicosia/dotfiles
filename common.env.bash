@@ -18,7 +18,7 @@ if [ -d "$NVM_DIR" ]; then
 fi
 
 export PERL5_DIR="$HOME/perl5"
-if [ ! -x "$PERL5_DIR/bin" ]; then
+if [ -x "$PERL5_DIR" ]; then
   PATH="$PERL5_DIR/bin${PATH:+:${PATH}}"; export PATH;
   PERL5LIB="$PERL5_DIR/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
   PERL_LOCAL_LIB_ROOT="$PERL5_DIR${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
