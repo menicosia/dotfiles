@@ -3,6 +3,9 @@
 #
 echo "sourcing common environment setup..."
 
+# Disable tty flow control (ie ^S/^Q to stop/start)
+stty -ixon
+
 ## Common PATH modifications
 
 [[ ":$PATH:" != *":$HOME/bin:"* ]] && PATH+=":$HOME/bin"
