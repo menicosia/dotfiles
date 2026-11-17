@@ -7,6 +7,7 @@
 [core]
 	editor = emacs
 	ignorecase = true
+	sshCommand = ssh -i ~/.ssh/marco-github -o IdentitiesOnly=yes
 [credential "https://github.com/menicosia"]
 	username = menicosia
 [credential "https://github.com/pm-practices/pm-blog"]
@@ -17,9 +18,14 @@
 	default = simple
 [pull]
 	rebase = true
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+# [credential "https://github.com"]
+# 	helper = 
+# 	helper = !/usr/bin/gh auth git-credential
+# [credential "https://gist.github.com"]
+# 	helper = 
+# 	helper = !/usr/bin/gh auth git-credential
+
+## Defaul identity (personal) stays in [user] above
+# Anything under ~/src/amd/ uses this work identity instead
+[includeIf "gitdir:~/src/amd/"]
+	path = ~/dotfiles/amd/git-config
