@@ -1,0 +1,5 @@
+[user]
+	name = Marco Nicosia
+	email = mnicosia@amd.com
+[core]
+	sshCommand = ssh -i ~/.ssh/mnicosia-amdeng -o IdentitiesOnly=yes
